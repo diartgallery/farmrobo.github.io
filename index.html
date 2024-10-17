@@ -3,81 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Di Art Gallery - A collection of curated artwork.">
-    <title>Di Art Gallery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Interactive Spinning Wheel</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <header>
-        <div class="logo">
-            <h1>Di Art Gallery</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Art is not what you see,<br>but what you make others see</h2>
-        </div>
-    </section>
-
-    <section id="gallery" class="gallery">
-        <h2>Curated Art Collection</h2>
-        <div class="gallery-grid">
-            <div class="art-item">
-                <img src="art1.jpg" alt="Art 1">
-                <p>Abstract Vibes</p>
+    <div class="container">
+        <div class="wheel" id="wheel">
+            <div class="tool" data-name="Tool 1" data-specs="Specifications for Tool 1" style="--i: 0;">
+                <img src="tool1.png" alt="Tool 1">
             </div>
-            <div class="art-item">
-                <img src="art2.jpg" alt="Art 2">
-                <p>Serenity in Blue</p>
+            <div class="tool" data-name="Tool 2" data-specs="Specifications for Tool 2" style="--i: 1;">
+                <img src="tool2.png" alt="Tool 2">
             </div>
-            <div class="art-item">
-                <img src="art3.jpg" alt="Art 3">
-                <p>Shades of Thought</p>
+            <div class="tool" data-name="Tool 3" data-specs="Specifications for Tool 3" style="--i: 2;">
+                <img src="tool3.png" alt="Tool 3">
+            </div>
+            <div class="tool" data-name="Tool 4" data-specs="Specifications for Tool 4" style="--i: 3;">
+                <img src="tool4.png" alt="Tool 4">
+            </div>
+            <div class="tool" data-name="Tool 5" data-specs="Specifications for Tool 5" style="--i: 4;">
+                <img src="tool5.png" alt="Tool 5">
             </div>
         </div>
-    </section>
-
-    <section id="wheel" class="wheel">
-        <div class="spinning-wheel">
-            <div class="wheel-segment" data-style="Style 1">Style 1</div>
-            <div class="wheel-segment" data-style="Style 2">Style 2</div>
-            <div class="wheel-segment" data-style="Style 3">Style 3</div>
-            <div class="wheel-segment" data-style="Style 4">Style 4</div>
-            <div class="wheel-segment" data-style="Style 5">Style 5</div>
+        <div class="center">
+            <img id="robotImage" src="default_robot.png" alt="Robot" />
+            <div id="tooltip" class="tooltip"></div>
         </div>
-        <div id="style-popup" class="popup hidden">
-            <div class="popup-content">
-                <h3 id="style-title"></h3>
-                <p id="style-details"></p>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <h2>About Di Art Gallery</h2>
-        <p>Di Art Gallery is a sanctuary for art enthusiasts, offering a curated selection of contemporary and modern art. We believe in the power of art to evoke emotion, inspire creativity, and tell stories beyond words.</p>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Get in Touch</h2>
-        <p>Contact us at <a href="mailto:info@diartgallery.com">info@diartgallery.com</a> for inquiries, collaborations, and commissions.</p>
-    </section>
-    
-    <footer>
-        <p>&copy; 2024 Di Art Gallery. All rights reserved.</p>
-    </footer>
-
-    <script src="wheelInteraction.js"></script>
-
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
+

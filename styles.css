@@ -59,6 +59,8 @@ body {
     background: rgba(0, 0, 0, 0.8);
     color: #fff;
     border-radius: 5px;
-    display: none;
+    display: none; /* Initially hidden */
     pointer-events: none;
+    white-space: pre-wrap;
 }
+

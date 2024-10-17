@@ -14,24 +14,26 @@ tools.forEach(tool => {
             }
         });
 
-        // Change robot image
-        robotImage.src = tool.querySelector('img').src.replace('tool', 'robot_with_tool'); // Change image path accordingly
+        // Change robot image to match the hovered tool
+        const toolImage = tool.querySelector('img').src; // Get the tool image
+        robotImage.src = toolImage.replace('tool', 'robot_with_tool'); // Replace part of the filename to match your robot image naming convention
 
-        // Show tooltip
+        // Show the tooltip with tool name and specifications
         tooltip.innerText = `${toolName}\n${toolSpecs}`;
         tooltip.style.display = 'block';
     });
 
     tool.addEventListener('mouseleave', () => {
-        // Reset blurring
+        // Reset blurring for all tools
         tools.forEach(t => {
             t.style.filter = 'none';
         });
 
-        // Reset robot image
-        robotImage.src = 'default_robot.png'; // Change to your default robot image
+        // Reset robot image back to default
+        robotImage.src = 'default_robot.png'; // Set to your default robot image path
 
-        // Hide tooltip
+        // Hide the tooltip
         tooltip.style.display = 'none';
     });
 });
+

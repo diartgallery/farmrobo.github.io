@@ -1,196 +1,64 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Montserrat', sans-serif;
-    color: #000;
-    background-color: #fff;
-    line-height: 1.8;
-}
-
-/* Header Styling */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    border-bottom: 1px solid #ccc;
-}
-
-header h1 {
-    font-size: 36px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 30px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    font-size: 16px;
-    color: #000;
-    font-weight: 500;
-    padding-bottom: 5px;
-}
-
-nav ul li a:hover {
-    border-bottom: 2px solid #000;
-}
-
-/* Hero Section */
-.hero {
-    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f4f4f4;
-    padding: 20px;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
 }
 
-.hero-content {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 40px;
-    border-radius: 10px;
+.container {
+    position: relative;
 }
 
-.hero-content h2 {
-    font-size: 36px;
-    font-weight: 400;
-    letter-spacing: 1px;
+.wheel {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: rotate(0deg);
+    transition: transform 0.5s;
 }
 
-/* Gallery Section */
-.gallery {
-    padding: 80px 40px;
-    text-align: center;
+.tool {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(calc(var(--i) * 72deg)) translate(120px);
+    transition: filter 0.3s, transform 0.3s;
 }
 
-.gallery h2 {
-    font-size: 28px;
-    margin-bottom: 40px;
-    font-weight: 500;
-    letter-spacing: 2px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-.art-item img {
+.tool img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
 }
 
-.art-item img:hover {
-    transform: scale(1.05);
-}
-
-/* About and Contact Section */
-.about, .contact {
-    padding: 60px 40px;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.about h2, .contact h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.about p, .contact p {
-    font-size: 18px;
-    font-weight: 300;
-    color: #444;
-    line-height: 1.6;
-}
-
-/* Footer */
-footer {
-    padding: 20px 0;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    font-size: 14px;
-}
-
-/* Spinning Wheel */
-.spinning-wheel {
-    position: fixed;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    border-radius: 50%;
-    background-color: #f0f0f0;
-    padding: 20px;
-    width: 200px;
-}
-
-.wheel-segment {
-    margin: 10px;
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.wheel-segment:hover {
-    background-color: #555;
-}
-
-/* Pop-up for Style Details */
-.popup {
+.center {
     position: absolute;
-    left: 220px; /* Position to the right of the spinning wheel */
-    top: 0;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 10;
 }
 
-.popup.hidden {
-    display: none;
+#robotImage {
+    width: 100px;
+    height: auto;
+    transition: opacity 0.3s;
 }
 
-button {
-    margin-top: 10px;
+.tooltip {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 10px;
-    background-color: black;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-/* Media Queries for Mobile Responsiveness */
-@media (max-width: 768px) {
-    .spinning-wheel {
-        width: 160px;
-        padding: 15px;
-    }
-    .wheel-segment {
-        padding: 15px;
-    }
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 5px;
+    display: none;
+    pointer-events: none;
 }
